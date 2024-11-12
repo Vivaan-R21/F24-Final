@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Off-brand spotify</title> <!-- Keep this one only -->
+    <img src="https://i.pinimg.com/736x/5f/3c/f2/5f3cf25247a21660d07aabc0a2fe03cd.jpg" alt="Description of image" />
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
