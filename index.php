@@ -35,7 +35,6 @@
 
         </div>
         <div>
-        <h1 style="text-align: center;">Songs List</h1>
 <table>
     <thead>
         <tr>
