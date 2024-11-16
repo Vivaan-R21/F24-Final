@@ -13,7 +13,7 @@
         crossorigin="anonymous" />
     <link rel="stylesheet" href="styles/stylesheet.css" />
 </head>
-<body>
+<div>
     <div>
         <!-- Songs -->
         <?php 
@@ -34,5 +34,71 @@
         </div>
 
         </div>
-</body>
+        <div>
+        <h1 style="text-align: center;">Songs List</h1>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php if (!empty($songs)): ?>
+            <?php foreach ($songs as $index => $song): ?>
+                <tr>
+                    <td><?php echo $index + 1; ?></td> <!-- Song number -->
+                    <td><?php echo htmlspecialchars($song['title'] ?? 'N/A'); ?></td>
+                    <td><?php echo htmlspecialchars($song['artist'] ?? 'N/A'); ?></td>
+                    <td><?php echo htmlspecialchars($song['duration'] ?? 'N/A'); ?></td>
+                </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="4" style="text-align: center;">No songs found!</td>
+            </tr>
+        <?php endif; ?>
+    </tbody>
+</table>
+
+        </div>
+        <footer class="bg-dark text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <!-- Song Title -->
+        <div class="d-flex align-items-center">
+            <div class="ms-3">
+                <p class="mb-0"></p>
+                <small></small>
+            </div>
+        </div>
+
+        <!-- Media Controls -->
+        <div class="d-flex align-items-center">
+            <button class="btn btn-outline-light me-2">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button class="btn btn-light me-2">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="btn btn-outline-light me-2">
+                <i class="fas fa-step-forward"></i>
+            </button>
+        </div>
+
+        <!-- Volume Control -->
+        <div class="d-flex align-items-center">
+            <i class="fas fa-volume-up me-2"></i>
+            <input type="range" class="form-range" id="volumeControl" min="0" max="100" step="1" value="50">
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="container mt-2">
+        <input type="range" class="form-range" id="progressBar" min="0" max="100" step="1" value="0">
+    </div>
+</footer>
+
+    </body>
 </html>
